@@ -1,9 +1,7 @@
-# React + Vite
+# Movie Front
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tp para el profe de labo 4, en esta ocasión intentaré crear un front que muestre y permita buscar películas obteniendo sus respectivos pósters, títulos, sinopsis, etc.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# Labo4_TP_Gramet" 
+Instrucciones (14/5/24):
+Npm i
+npm run dev
