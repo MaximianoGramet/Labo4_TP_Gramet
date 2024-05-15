@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation } from "wouter";
 import "./CountryCard.css";
-import CountryDetails from "./CountryDetails";
 
 const CountryCard = ({ country }) => {
-    const [isClicked, setIsClicked] = useState(false);
+  const [location, setLocation] = useLocation();
 
-    const handleClick = () => {
-      setIsClicked(!isClicked);
-    }
+  const handleClick = () => {
+    const countryName = country.name.common
+    setLocation(`/country/${String(countryName)}`);
+  };
+
   return (
     <div className="country-card" onClick={handleClick}>
       <img src={country.flag} alt={country.name.common} className="flag" />
@@ -17,7 +19,6 @@ const CountryCard = ({ country }) => {
           <img src={country.coatOfArms} alt="Coat of Arms" className="coat-of-arms" />
         )}
       </div>
-      {isClicked && <CountryDetails country={country.name.common} />}
     </div>
   );
 };

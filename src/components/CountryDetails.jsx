@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { fetchSingleCountryData } from "../services/CountriesServices";
 import { countryDTO } from "../services/Dto/CountriesDto";
 
-const CountryDetails = (countryName) => {
+const CountryDetails = ({params}) => {
   const [countryDetails, setCountryDetails] = useState(countryDTO);
-
+  const countryName= params.countryName
+  console.log(countryName);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchSingleCountryData(countryName.country);
+      const data = await fetchSingleCountryData(countryName);
       console.log(data);
-      if (data) {
-          const countryData = data;
+      if (data[0]) {
+          const countryData = data[0];
           const updatedCountryDetails = { ...countryDetails };
           updatedCountryDetails.name.common = countryData.name.common;
           updatedCountryDetails.name.official = countryData.name.official;
@@ -27,7 +28,7 @@ const CountryDetails = (countryName) => {
           updatedCountryDetails.landlocked = countryData.landlocked;
           updatedCountryDetails.borders = countryData.borders;
           updatedCountryDetails.area = countryData.area;
-          updatedCountryDetails.flag = countryData.flag;
+          updatedCountryDetails.flag = countryData.flags.png;
           updatedCountryDetails.maps = countryData.maps;
           updatedCountryDetails.population = countryData.population;
           updatedCountryDetails.gini = countryData.gini;
@@ -52,12 +53,12 @@ const CountryDetails = (countryName) => {
       <p>CCA3: {countryDetails.cca3}</p>
       <p>Independent: {countryDetails.independent}</p>
       <p>Status: {countryDetails.status}</p>
-      {/* <p>Currencies: {countryDetails.currencies.join(", ")}</p> */}
+      {/* <p>Currencies: {countryDetails.currencies}</p> */}
       <p>Capital: {countryDetails.capital}</p>
       <p>Region: {countryDetails.region}</p>
       <p>Subregion: {countryDetails.subregion}</p>
-      {/* <p>Languages: {countryDetails.languages.join(", ")}</p> */}
-      {/* <p>Latitude and Longitude: {countryDetails.latlng.join(", ")}</p> */}
+      {/* <p>Languages: {countryDetails.languages}</p>  */}
+      {/* <p>Latitude and Longitude: {countryDetails.latlng}</p> */}
       <p>Landlocked: {countryDetails.landlocked.toString()}</p>
       {/* <p>Borders: {countryDetails.borders.join(", ")}</p> */}
       <p>Area: {countryDetails.area} km²</p>

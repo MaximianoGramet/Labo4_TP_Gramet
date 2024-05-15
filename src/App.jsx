@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Link } from "wouter";
+import { Route, Link, Switch } from "wouter";
 import CountryListComponent from "./components/CountryListComponent";
+import CountryDetails from "./components/CountryDetails";
 
 const Home = () => {
   return (
@@ -14,10 +15,11 @@ const Home = () => {
 
 const App = () => {
   return (
-    <div>
+    <Switch>
       <Route path="/" component={Home} />
       <Route path="/cards" component={CountryListComponent} />
-    </div>
+      <Route path="/country/:countryName" component={CountryDetails} />
+    </Switch>
   );
 };
 
