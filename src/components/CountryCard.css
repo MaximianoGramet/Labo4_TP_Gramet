@@ -1,0 +1,41 @@
+.country-card {
+    color: black;
+    position: relative;
+    width: 202px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flexbox;
+  }
+  
+  .flag {
+    width: 100%;
+    height: 150;
+    display: flex;
+    object-fit: cover;
+  }
+  
+  .country-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+  }
+  
+  .country-name {
+    font-weight: bold;
+  }
+  
+  .coat-of-arms {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  
