@@ -1,25 +1,35 @@
 import React from "react";
 import { Route, Link, Switch } from "wouter";
-import CountryListComponent from "./components/CountryListComponent";
 import CountryDetails from "./components/CountryDetails";
+import NavbarC from "./components/Navbar"
+import { CountryList } from "./pages/CountryList";
+import "./App.css"
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Worldwide Country Viewer</h1>
+      <NavbarC/>
+      <section className="center">
+        <div className="title">
+          <h1>Welcome to Worldwide Country Viewer</h1>
+        </div>
       <p>View all Countries flags here:</p>
-      <Link href="/cards">View Flags</Link>
+      <Link href="/list">View Flags</Link>
+      </section>
     </div>
   );
 };
 
 const App = () => {
+
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/cards" component={CountryListComponent} />
-      <Route path="/country/:countryName" component={CountryDetails} />
-    </Switch>
+      <Switch>
+        <main className="blackBackground">
+          <Route path="/" component={Home} />
+          <Route path="/list" component={CountryList} />
+          <Route path="/country/:countryName" component={CountryDetails} />
+        </main>
+      </Switch>
   );
 };
 

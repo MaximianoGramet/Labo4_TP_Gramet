@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchSingleCountryData } from "../services/CountriesServices";
 import { countryDTO } from "../services/Dto/CountriesDto";
+import Navbar from "./Navbar";
 
 const CountryDetails = ({params}) => {
   const [countryDetails, setCountryDetails] = useState(countryDTO);
@@ -47,6 +48,7 @@ const CountryDetails = ({params}) => {
 
   return (
     <div>
+      <Navbar/>
       <h2>{countryDetails.name.common}</h2>
       <p>Official Name: {countryDetails.name.official}</p>
       <p>CCN3: {countryDetails.ccn3}</p>
@@ -63,7 +65,7 @@ const CountryDetails = ({params}) => {
       {/* <p>Borders: {countryDetails.borders.join(", ")}</p> */}
       <p>Area: {countryDetails.area} km²</p>
       <img src={countryDetails.flag} alt="Flag" />
-      {/* Add rendering for maps, population, gini, timezones, continents, flags, coatOfArms, startOfWeek, and capitalInfo as needed */}
+      {/* Add rendering for maps, population, gini, timezones, continents, coatOfArms, startOfWeek, and capitalInfo as needed */}
     </div>
   );
 };

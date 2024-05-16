@@ -1,4 +1,15 @@
+/* *{
+  background-color: rgb(68, 58, 50);
+} */
+
+.titleList{
+  padding-top: 5%;
+  margin-bottom: 30px;
+  margin-top: 55px;
+  max-width: 100%;
+}
 .country-list {
+  overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -7,7 +18,7 @@
   
   .country-card {
     width: 200px;
-    height: 250px;
+    height: 150px;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;

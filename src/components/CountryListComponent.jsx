@@ -30,7 +30,7 @@ const CountryListComponent = () => {
   };
   return (
     <div>
-      <h1>Country List</h1>
+      <h1 className="titleList">Country List</h1>
       <div className="country-list">
         {countryList.map((country, index) => (
           <CountryCard key={index} country={country} />
