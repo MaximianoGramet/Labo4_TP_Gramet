@@ -45,15 +45,18 @@ const CountryDetails = ({params}) => {
     };
     fetchData();
 }, []);
-
   return (
     <div>
       <Navbar/>
+      <div className="center">
+      <section className="padding">
       <h2>{countryDetails.name.common}</h2>
+      <img src={countryDetails.flag} alt="Flag" />
+      <img className="coatOfArms" src={countryDetails.coatOfArms.png} alt=" Coat of Arms" />
       <p>Official Name: {countryDetails.name.official}</p>
       <p>CCN3: {countryDetails.ccn3}</p>
       <p>CCA3: {countryDetails.cca3}</p>
-      <p>Independent: {countryDetails.independent}</p>
+      <p>Independent: {countryDetails.independent===true?"Yes":"No"}</p>
       <p>Status: {countryDetails.status}</p>
       {/* <p>Currencies: {countryDetails.currencies}</p> */}
       <p>Capital: {countryDetails.capital}</p>
@@ -64,8 +67,9 @@ const CountryDetails = ({params}) => {
       <p>Landlocked: {countryDetails.landlocked.toString()}</p>
       {/* <p>Borders: {countryDetails.borders.join(", ")}</p> */}
       <p>Area: {countryDetails.area} km²</p>
-      <img src={countryDetails.flag} alt="Flag" />
       {/* Add rendering for maps, population, gini, timezones, continents, coatOfArms, startOfWeek, and capitalInfo as needed */}
+      </section>
+      </div>
     </div>
   );
 };

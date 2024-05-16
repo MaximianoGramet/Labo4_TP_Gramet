@@ -13,8 +13,8 @@ const Home = () => {
         <div className="title">
           <h1>Welcome to Worldwide Country Viewer</h1>
         </div>
-      <p>View all Countries flags here:</p>
-      <Link href="/list">View Flags</Link>
+      <p>View all Countries countries here:</p>
+      <Link href="/list">View Countries</Link>
       </section>
     </div>
   );
