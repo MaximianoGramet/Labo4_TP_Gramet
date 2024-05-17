@@ -56,7 +56,7 @@ const CountryDetails = ({params}) => {
     <div>
       <Navbar/>
       <div className="center">
-      <section className="padding">
+      <section className="padding details">
       <h2>{countryDetails.name.common}</h2>
       <img src={countryDetails.flag} alt="Flag" />
       <img className="coatOfArms" src={countryDetails.coatOfArms.png} alt=" Coat of Arms" />

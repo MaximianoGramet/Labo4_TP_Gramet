@@ -11,6 +11,10 @@
   color: antiquewhite;
 }
 
+.details{
+  text-align: left;
+  padding-left: 5%;
+}
 .blackBackground{
   background-image: url(./assets/BlackBackground.jpg);
   background-repeat: no-repeat;
