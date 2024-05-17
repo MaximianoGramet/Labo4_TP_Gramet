@@ -15,3 +15,32 @@
     background-color: white;
     transition: 0.3s;
 }
+.searchBar{
+    margin:1%;
+    display: inline-block;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+}
+  
+  input {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 72px;
+  }

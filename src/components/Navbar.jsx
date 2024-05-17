@@ -1,5 +1,6 @@
 import { Link } from "wouter"
 import "./Navbar.css"
+import SearchBar from "./SearchBar"
 
 const NavbarC = ()=>{
     return(
@@ -10,6 +11,9 @@ const NavbarC = ()=>{
             <li className="li">
             <Link to="/list">Countries</Link>
             </li>
+            <div className="searchBar">
+                <SearchBar/>
+            </div>
         </div>
     )
 }
