@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 const CountryDetails = ({params}) => {
   const [countryDetails, setCountryDetails] = useState(countryDTO);
   const countryName= params.countryName
-  console.log(countryName);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchSingleCountryData(countryName);

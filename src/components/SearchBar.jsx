@@ -1,12 +1,14 @@
 import { useLocation } from "wouter"
 import countries from "../services/nameList"
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 
 const SearchBar = () => {
     const [filteredOptions,setFilteredOptions] = useState([])
     const inputRef = useRef(null)
     const [location, setLocation] = useLocation();
+
+    const isCountryDetailPage = location.startsWith("/country/");
 
     const handleInputChange = () => {
         const inputValue = inputRef.current.value.toLowerCase();
@@ -24,8 +26,27 @@ const SearchBar = () => {
       const handleOptionClick = (option) => {
         inputRef.current.value = option;
         setFilteredOptions([]);
-        setLocation(`/country/${String(option)}`);
+
+        if (isCountryDetailPage) {
+            const currentCountryName = location.substring("/country/".length);
+            if (currentCountryName !== option) {
+                setLocation(`/country/${String(option)}`);
+                window. location. reload()
+            }
+        } else {
+            setLocation(`/country/${String(option)}`);
+        }
       };
+
+      const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            const inputValue = inputRef.current.value.toLowerCase();
+            const matchedOption = filteredOptions.find(option => option.toLowerCase() === inputValue);
+            if (matchedOption) {
+                handleOptionClick(matchedOption);
+            }
+        }
+    };
 
   return (
     <div>
@@ -34,6 +55,7 @@ const SearchBar = () => {
         ref={inputRef}
         placeholder="Buscar..."
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
       />
       {filteredOptions.length > 0 && (
         <ul className="options">
@@ -49,5 +71,7 @@ const SearchBar = () => {
 }
 
 export default SearchBar
+
+
 
 
