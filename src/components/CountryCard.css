@@ -3,14 +3,25 @@
     position: relative;
     width: 202px;
     height: 150px;
-    background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flexbox;
   }
-  
+  .country-card:hover{
+    color:rgb(0, 0, 0);
+    padding: 3px;
+    animation-duration: 0.6s;
+  }
+  .backgroundColor{
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .backgroundColor:hover{
+    background-color: rgb(76, 78, 204);
+  }
+
   .flag {
     width: 100%;
     height: 150;
@@ -23,8 +34,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
   }
   
   .country-name {

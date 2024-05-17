@@ -11,7 +11,7 @@ const CountryCard = ({ country }) => {
   };
 
   return (
-    <div className="country-card" onClick={handleClick}>
+    <div className="country-card backgroundColor" onClick={handleClick}>
       <img src={country.flag} alt={country.name.common} className="flag" />
       <div className="country-details">
         <div className="country-name">{country.name.common}</div>
