@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetchSingleCountryData } from "../services/CountriesServices";
 import { countryDTO } from "../services/Dto/CountriesDto";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CountryDetails = ({params}) => {
   const [countryDetails, setCountryDetails] = useState(countryDTO);
@@ -10,7 +12,13 @@ const CountryDetails = ({params}) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchSingleCountryData(countryName);
-      console.log(data);
+      if(!data){
+        const badFetch =()=> toast.error("Failed Fetch",{
+         position:"bottom-center"
+       })
+       badFetch()
+        console.error(error);
+      }
       if (data[0]) {
           const countryData = data[0];
           const updatedCountryDetails = { ...countryDetails };
@@ -68,6 +76,7 @@ const CountryDetails = ({params}) => {
       {/* <p>Borders: {countryDetails.borders.join(", ")}</p> */}
       <p>Area: {countryDetails.area} km²</p>
       {/* Add rendering for maps, population, gini, timezones, continents, coatOfArms, startOfWeek, and capitalInfo as needed */}
+      <ToastContainer />
       </section>
       </div>
     </div>
