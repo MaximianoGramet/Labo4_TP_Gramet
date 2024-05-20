@@ -11,7 +11,6 @@
   }
   .country-card:hover{
     color:rgb(0, 0, 0);
-    padding: 3px;
     animation-duration: 0.6s;
   }
   .backgroundColor{

@@ -70,3 +70,16 @@
   background-color: #333;
   color: #fff;
 }
+
+select{
+  padding: 10px;
+  padding-left:15px;
+  padding-right: 5px;
+  animation-duration: 0,5s;
+  background: linear-gradient(to bottom right,rgb(66, 66, 134), pink);
+}
+
+option{
+  background: linear-gradient(to bottom right,rgb(66, 66, 134), pink);
+
+}

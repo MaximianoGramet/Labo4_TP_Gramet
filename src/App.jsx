@@ -14,7 +14,7 @@ const Home = () => {
           <h1>Welcome to Worldwide Country Viewer</h1>
         </div>
       <p>View all Countries countries here:</p>
-      <Link href="/list">View Countries</Link>
+      <Link className="a" href="/list">View Countries</Link>
       </section>
     </div>
   );

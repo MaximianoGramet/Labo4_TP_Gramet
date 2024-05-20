@@ -31,6 +31,10 @@ h1 {
   color:aliceblue
 }
 
+h2{
+  color:aliceblue
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -45,4 +49,16 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+p{
+  color: beige;
+}
+
+.a:hover{
+  color:#006eff
+}
+
+label{
+  color: antiquewhite;
 }
